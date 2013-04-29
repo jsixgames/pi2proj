@@ -25,7 +25,7 @@
         <c:import url='headerLogado.jsp' />
 
         <div id="conteudo">                           
-            <h1 id="titulocadastro">PAINEL DE CONTROLE - CADASTRAR NOVO ENDEREÇO</h1>
+            <h1 id="titulocadastro">Painel de Controle - Cadastrar novo endereço</h1>
             <div id="painelopcoes"> 
                 <c:import url='opcoespainel.jsp' />
                 <div id="painelconteudo">
