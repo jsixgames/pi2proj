@@ -29,18 +29,18 @@ public class RemoveClienteServlet extends HttpServlet {
         HttpSession session = request.getSession();                    
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String email = (String)session.getAttribute("emailLogado");
+        String senha = (String) session.getAttribute("senhaLogado");
         try {
             if (request.getParameter("btn-encsim") != null && request.getParameter("btn-encsim").equals("Sim, tenho")) {
-                try {                     
-                    out.println(session.getAttribute("emailLogado"));
-                      out.println("Achei");
-//                    clienteRemote.remover(aux);                    
-//                    session.invalidate();
-//                    request.getRequestDispatcher("index.jsp").forward(request, response);
-                    
-
-                } catch (Exception e) {
-                    out.println("Erro na busca de usuario");
+                try {                                        
+                    Login x = new Login(email,senha); 
+                    loginRemote.buscarCadastro(x);
+//                    clienteRemote.remover(x);
+                    session.invalidate();
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                } catch (Exception e) {                                        
+                    out.println("Problema ao excluir o usuario, provavel problema no glassfish");
 //                    request.getRequestDispatcher("painel.jsp").forward(request, response);                    
                 } 
             }

@@ -42,12 +42,15 @@ public class CadastroClienteBean extends AbstractBean<CadastroCliente> implement
     }
 
     @Override
-    public void remover(Login cliente) {                
-            Query query = em.createQuery("delete *"
-                    + " from CadastroCliente c"+"where c.email='"+cliente.getEmail()+"'"
-                    + " and c.senha='"+cliente.getSenha()+"'");
-            query.executeUpdate();
-            em.remove(em.merge(cliente));
+    public void remover(Login login) {
+        CadastroCliente cadastro=null;
+    if(login != null){
+        Query query = em.createQuery("select c from CadastroCliente c where c.email='"+login.getEmail()+"'"
+                + " and c.senha='"+login.getSenha()+"'");              
+                Object result = (Object) query.getSingleResult();
+                cadastro = (CadastroCliente) result;                
+    }        
+                em.remove(cadastro);
     }
 
 }

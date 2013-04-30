@@ -28,8 +28,7 @@ public class CadastroEnderecoServlet extends HttpServlet {
         try {
 
             if (request.getParameter("btn-newend") != null && request.getParameter("btn-newend").equals("Cadastrar")) {
-                try {
-            
+                try {                  
                     CadastroEndereco endereco = new CadastroEndereco();
                     endereco.setEndereco(request.getParameter("endereco"));
                     endereco.setNumero(request.getParameter("numero"));

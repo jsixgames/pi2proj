@@ -34,8 +34,8 @@ public class LoginServlet extends HttpServlet {
                     if (loginRemote.buscarEmail(user) == true) {  
                         logado = true;
                         session.setAttribute("username", loginRemote.buscarNome(user));
-                        session.setAttribute("emailLogado", request.getParameter("email"));
-                        session.setAttribute("user", user.toString());
+                        session.setAttribute("emailLogado", request.getParameter("email"));                        
+                        session.setAttribute("senhaLogado", request.getParameter("senha"));
                         session.setAttribute("verificalog", isLogado());
                         request.getRequestDispatcher("index.jsp").forward(request, response);
                         

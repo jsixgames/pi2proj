@@ -8,7 +8,7 @@
     <body>          
             <div id="conteinercadastro">       
                     <form method="post" action="CadastroClienteServlet" id="cadastro">            
-                <div id="formcadastro" style="width: 500px; float: left; margin: 0 auto;">
+                    <div id="formcadastro" style="width: 500px; float: left; margin: 0 auto;">
                         <b> 
                             <h1 id="titulodadoscad">Dados Pessoais</h1>
                             <div class="linha">
