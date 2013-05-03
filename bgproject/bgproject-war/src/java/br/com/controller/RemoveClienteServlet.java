@@ -1,11 +1,8 @@
 package br.com.controller;
 
+import br.com.classes.Login;
 import br.com.interfaces.CadastroClienteRemote;
 import br.com.interfaces.LoginRemote;
-import br.com.modelos.CadastroCliente;
-import br.com.modelos.CadastroEndereco;
-import br.com.modelos.Login;
-import br.com.modelos.MetodosGerais;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;

@@ -1,12 +1,11 @@
 package br.com.controller;
 
-import br.com.modelos.CadastroEndereco;
-import br.com.modelos.MetodosGerais;
+import br.com.classes.MetodosGerais;
 import br.com.interfaces.CadastroEnderecoRemote;
+import br.com.modelos.CadastroEndereco;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

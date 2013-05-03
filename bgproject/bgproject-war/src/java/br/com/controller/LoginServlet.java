@@ -1,7 +1,7 @@
 package br.com.controller;
 
+import br.com.classes.Login;
 import br.com.interfaces.LoginRemote;
-import br.com.modelos.Login;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;

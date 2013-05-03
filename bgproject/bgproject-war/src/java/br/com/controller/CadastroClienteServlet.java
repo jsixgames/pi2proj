@@ -1,9 +1,9 @@
 package br.com.controller;
 
+import br.com.classes.MetodosGerais;
 import br.com.interfaces.CadastroClienteRemote;
 import br.com.modelos.CadastroCliente;
 import br.com.modelos.CadastroEndereco;
-import br.com.modelos.MetodosGerais;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -20,45 +20,44 @@ public class CadastroClienteServlet extends HttpServlet {
     @EJB
     private CadastroClienteRemote clienteRemote;
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        HttpSession session = req.getSession();
+        resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
         try {
-            if (request.getParameter("btn_cadastrar") != null && request.getParameter("btn_cadastrar").equals("Cadastrar")) {
-                try {
-
+            if (req.getParameter("btn_cadastrar") != null && req.getParameter("btn_cadastrar").equals("Cadastrar")) {
+                try {                    
+                    
                     CadastroEndereco endereco = new CadastroEndereco();
-                    endereco.setEndereco(request.getParameter("endereco"));
-                    endereco.setNumero(request.getParameter("numero"));
-                    endereco.setComplemento(request.getParameter("complemento"));
-                    endereco.setCep(new MetodosGerais().tirardotecoma(request.getParameter("cep")));
-                    endereco.setBairro(request.getParameter("bairro"));
-                    endereco.setCidade(request.getParameter("cidade"));
-                    endereco.setEmail(request.getParameter("email"));
-                    endereco.setEstado(request.getParameter("estado"));
+                    endereco.setEndereco(req.getParameter("endereco"));
+                    endereco.setNumero(req.getParameter("numero"));
+                    endereco.setComplemento(req.getParameter("complemento"));
+                    endereco.setCep(new MetodosGerais().tirardotecoma(req.getParameter("cep")));
+                    endereco.setBairro(req.getParameter("bairro"));
+                    endereco.setCidade(req.getParameter("cidade"));
+                    endereco.setEmail(req.getParameter("email"));
+                    endereco.setEstado(req.getParameter("estado"));
                     endereco.setDescricaoEndereco("Endereco Principal");
 
 
                     CadastroCliente c = new CadastroCliente();
-                    c.setNome(request.getParameter("nome"));
-                    c.setCpf(new MetodosGerais().tirardotecoma(request.getParameter("cpf")));
-                    c.setDnasc(new MetodosGerais().formataData(request.getParameter("data")));
-                    c.setSexo(request.getParameter("sexo"));
-                    c.setTelefone(new MetodosGerais().tirardotecoma(request.getParameter("telefone")));
-                    c.setCelular(new MetodosGerais().tirardotecoma(request.getParameter("celular")));
-                    c.setEmail(request.getParameter("email"));
-                    c.setSenha(request.getParameter("senha"));
+                    c.setNome(req.getParameter("nome"));
+                    c.setCpf(new MetodosGerais().tirardotecoma(req.getParameter("cpf")));
+                    c.setDnasc(new MetodosGerais().formataData(req.getParameter("data")));
+                    c.setSexo(req.getParameter("sexo"));
+                    c.setTelefone(new MetodosGerais().tirardotecoma(req.getParameter("telefone")));
+                    c.setCelular(new MetodosGerais().tirardotecoma(req.getParameter("celular")));
+                    c.setEmail(req.getParameter("email"));
+                    c.setSenha(req.getParameter("senha"));
                     c.setEndereco(endereco);
                     clienteRemote.salvar(c);
 
-                    session.setAttribute("user", request.getParameter("nome"));
-                    request.getRequestDispatcher("respcadok.jsp").forward(request, response);
-
+                    session.setAttribute("user", req.getParameter("nome"));
+                    req.getRequestDispatcher("respcadok.jsp").forward(req, resp);
 
                 } catch (Exception e) {
-                    request.getRequestDispatcher("respcadfail.jsp").forward(request, response);
+                    req.getRequestDispatcher("respcadfail.jsp").forward(req, resp);
                 }
             }
         } finally {

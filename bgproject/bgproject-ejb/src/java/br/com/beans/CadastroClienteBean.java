@@ -1,8 +1,8 @@
 package br.com.beans;
 
+import br.com.classes.Login;
 import br.com.interfaces.CadastroClienteRemote;
 import br.com.modelos.CadastroCliente;
-import br.com.modelos.Login;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
