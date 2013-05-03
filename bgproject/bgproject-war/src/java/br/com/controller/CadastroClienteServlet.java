@@ -22,13 +22,12 @@ public class CadastroClienteServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();                    
+        HttpSession session = request.getSession();
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-
             if (request.getParameter("btn_cadastrar") != null && request.getParameter("btn_cadastrar").equals("Cadastrar")) {
-                try {                   
+                try {
 
                     CadastroEndereco endereco = new CadastroEndereco();
                     endereco.setEndereco(request.getParameter("endereco"));
@@ -43,7 +42,7 @@ public class CadastroClienteServlet extends HttpServlet {
 
 
                     CadastroCliente c = new CadastroCliente();
-                    c.setNome(request.getParameter("nome"));                  
+                    c.setNome(request.getParameter("nome"));
                     c.setCpf(new MetodosGerais().tirardotecoma(request.getParameter("cpf")));
                     c.setDnasc(new MetodosGerais().formataData(request.getParameter("data")));
                     c.setSexo(request.getParameter("sexo"));
@@ -53,14 +52,14 @@ public class CadastroClienteServlet extends HttpServlet {
                     c.setSenha(request.getParameter("senha"));
                     c.setEndereco(endereco);
                     clienteRemote.salvar(c);
-                    
+
                     session.setAttribute("user", request.getParameter("nome"));
                     request.getRequestDispatcher("respcadok.jsp").forward(request, response);
-                    
+
 
                 } catch (Exception e) {
-                    request.getRequestDispatcher("respcadfail.jsp").forward(request, response);                    
-                } 
+                    request.getRequestDispatcher("respcadfail.jsp").forward(request, response);
+                }
             }
         } finally {
             out.close();
