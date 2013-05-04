@@ -1,8 +1,8 @@
 package br.com.beans;
 
-import br.com.classes.Login;
 import br.com.interfaces.LoginRemote;
 import br.com.modelos.CadastroCliente;
+import br.com.modelos.Login;
 import javax.ejb.Stateless;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
