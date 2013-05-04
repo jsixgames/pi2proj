@@ -9,9 +9,9 @@ public class Main {
 //        lg.setLocationRelativeTo(null);
 //        lg.setVisible(true);
         
-        MatrizHome mh = new MatrizHome();
-        mh.setLocationRelativeTo(null);
-        mh.setVisible(true);
+//        MatrizHome mh = new MatrizHome();
+//        mh.setLocationRelativeTo(null);
+//        mh.setVisible(true);
         
 //        Departamento d = new Departamento();
 //        d.setLocationRelativeTo(null);
@@ -20,6 +20,10 @@ public class Main {
 //        Produto p = new Produto();
 //        p.setLocationRelativeTo(null);
 //        p.setVisible(true);
+        
+        CadastroDep cd = new CadastroDep();
+        cd.setLocationRelativeTo(null);
+        cd.setVisible(true);
         
     }
 }
