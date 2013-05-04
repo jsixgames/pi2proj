@@ -3,7 +3,8 @@ package br.com.matriz;
 
 public class Main {
    
-    public static void main(String[] args) {        
+    public static void main(String[] args) {
+        
 //        Login lg = new Login();
 //        lg.setLocationRelativeTo(null);
 //        lg.setVisible(true);
@@ -12,12 +13,13 @@ public class Main {
 //        mh.setLocationRelativeTo(null);
 //        mh.setVisible(true);
         
-//          Departamento d = new Departamento();
-//          d.setLocationRelativeTo(null);
-//          d.setVisible(true);
+//        Departamento d = new Departamento();
+//        d.setLocationRelativeTo(null);
+//        d.setVisible(true);
         
-        Produto p = new Produto();
-        p.setLocationRelativeTo(null);
-        p.setVisible(true);
+//        Produto p = new Produto();
+//        p.setLocationRelativeTo(null);
+//        p.setVisible(true);
+        
     }
 }

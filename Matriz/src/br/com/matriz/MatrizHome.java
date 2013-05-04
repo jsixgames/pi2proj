@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 
 public class MatrizHome extends JFrame {
     
-    
     public MatrizHome() {
         initComponents();
     }
