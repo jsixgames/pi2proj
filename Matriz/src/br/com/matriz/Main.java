@@ -41,8 +41,8 @@ public class Main {
 //        ap.setLocationRelativeTo(null);
 //        ap.setVisible(true);
        
-//        RemoverProd rp = new RemoverProd();
-//        rp.setLocationRelativeTo(null);
-//        rp.setVisible(true);
+        RemoverProd rp = new RemoverProd();
+        rp.setLocationRelativeTo(null);
+        rp.setVisible(true);
     }
 }
