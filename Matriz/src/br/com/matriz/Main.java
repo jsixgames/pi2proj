@@ -21,9 +21,28 @@ public class Main {
 //        p.setLocationRelativeTo(null);
 //        p.setVisible(true);
         
-        CadastroDep cd = new CadastroDep();
-        cd.setLocationRelativeTo(null);
-        cd.setVisible(true);
+//        CadastrarDep cd = new CadastrarDep();
+//        cd.setLocationRelativeTo(null);
+//        cd.setVisible(true);
+       
+//        AlterarDep ad = new AlterarDep();
+//        ad.setLocationRelativeTo(null);
+//        ad.setVisible(true);
+       
+//        RemoverDep rd = new RemoverDep();
+//        rd.setLocationRelativeTo(null);
+//        rd.setVisible(true);
+       
+//        CadastrarProd cp = new CadastrarProd();
+//        cp.setLocationRelativeTo(null);
+//        cp.setVisible(true);
         
+//        AlterarProd ap = new AlterarProd();
+//        ap.setLocationRelativeTo(null);
+//        ap.setVisible(true);
+       
+//        RemoverProd rp = new RemoverProd();
+//        rp.setLocationRelativeTo(null);
+//        rp.setVisible(true);
     }
 }
