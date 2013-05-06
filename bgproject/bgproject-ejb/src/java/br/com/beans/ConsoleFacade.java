@@ -5,7 +5,7 @@
 package br.com.beans;
 
 import br.com.interfaces.ConsoleFacadeRemote;
-import br.com.modelos.Console;
+import br.com.modelos.Departamento;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author 41011880
  */
 @Stateless(mappedName = "ejb/ConsoleFacade")
-public class ConsoleFacade extends AbstractFacade<Console> implements ConsoleFacadeRemote {
+public class ConsoleFacade extends AbstractFacade<Departamento> implements ConsoleFacadeRemote {
 
     @PersistenceContext(unitName = "bgproject-ejbPU")
     private EntityManager em;
@@ -27,6 +27,6 @@ public class ConsoleFacade extends AbstractFacade<Console> implements ConsoleFac
     }
 
     public ConsoleFacade() {
-        super(Console.class);
+        super(Departamento.class);
     }
 }
