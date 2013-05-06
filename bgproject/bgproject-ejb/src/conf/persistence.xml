@@ -5,8 +5,8 @@
     <jta-data-source>BXGAMES</jta-data-source>
     <class>br.com.modelos.CadastroCliente</class>
     <class>br.com.modelos.CadastroEndereco</class>
-    <class>br.com.modelos.Console</class>
     <class>br.com.modelos.Produto</class>
+    <class>br.com.modelos.Departamento</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.format_sql" value="true"/>

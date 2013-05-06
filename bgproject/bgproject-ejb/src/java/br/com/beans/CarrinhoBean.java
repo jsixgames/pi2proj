@@ -1,13 +1,13 @@
 package br.com.beans;
 
-import br.com.interfaces.Carrinho;
+import br.com.interfaces.CarrinhoRemote;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 
 @Stateful(mappedName="ejb/Cart")
-public class CarrinhoBean implements Carrinho {
+public class CarrinhoBean implements CarrinhoRemote {
 
     private ArrayList items;
 
