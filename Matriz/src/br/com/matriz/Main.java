@@ -33,16 +33,16 @@ public class Main {
 //        rd.setLocationRelativeTo(null);
 //        rd.setVisible(true);
        
-//        CadastrarProd cp = new CadastrarProd();
-//        cp.setLocationRelativeTo(null);
-//        cp.setVisible(true);
+        CadastrarProd cp = new CadastrarProd();
+        cp.setLocationRelativeTo(null);
+        cp.setVisible(true);
         
 //        AlterarProd ap = new AlterarProd();
 //        ap.setLocationRelativeTo(null);
 //        ap.setVisible(true);
        
-        RemoverProd rp = new RemoverProd();
-        rp.setLocationRelativeTo(null);
-        rp.setVisible(true);
+//        RemoverProd rp = new RemoverProd();
+//        rp.setLocationRelativeTo(null);
+//        rp.setVisible(true);
     }
 }

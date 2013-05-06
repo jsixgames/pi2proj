@@ -29,10 +29,13 @@ public class MatrizHome extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BOXGAMES - APP DESKTOP - MATRIZ");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(580, 430));
+        setMinimumSize(new java.awt.Dimension(580, 450));
+        setPreferredSize(new java.awt.Dimension(580, 450));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(580, 450));
+        jPanel1.setPreferredSize(new java.awt.Dimension(580, 450));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 28)); // NOI18N
         jLabel2.setText("BOXGAMES - PAINEL MATRIZ");
@@ -88,7 +91,7 @@ public class MatrizHome extends JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
