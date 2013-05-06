@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @author Calebe de Paula Bianchini
  */
 @Entity
-public class Console implements Serializable, Cloneable {
+public class Departamento implements Serializable, Cloneable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -23,14 +23,14 @@ public class Console implements Serializable, Cloneable {
     private Long id;
     private String nome;
 
-    protected Console() {
+    protected Departamento() {
     }
 
-    public Console(String nome) {
+    public Departamento(String nome) {
         this.nome = nome;
     }
     
-    public Console(Long id,String nome) {
+    public Departamento(Long id,String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -62,10 +62,10 @@ public class Console implements Serializable, Cloneable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Console)) {
+        if (!(object instanceof Departamento)) {
             return false;
         }
-        Console other = (Console) object;
+        Departamento other = (Departamento) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

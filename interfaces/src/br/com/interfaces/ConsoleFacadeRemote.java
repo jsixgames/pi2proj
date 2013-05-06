@@ -4,24 +4,24 @@
  */
 package br.com.interfaces;
 
-import br.com.modelos.Console;
+import br.com.modelos.Departamento;
 import java.util.List;
 import javax.ejb.Remote;
 
 @Remote
 public interface ConsoleFacadeRemote {
 
-    void create(Console console);
+    void create(Departamento console);
 
-    void edit(Console console);
+    void edit(Departamento console);
 
-    void remove(Console console);
+    void remove(Departamento console);
 
-    Console find(Object id);
+    Departamento find(Object id);
 
-    List<Console> findAll();
+    List<Departamento> findAll();
 
-    List<Console> findRange(int[] range);
+    List<Departamento> findRange(int[] range);
 
     int count();
     

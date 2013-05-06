@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 @Entity
@@ -34,8 +33,8 @@ public class CadastroCliente implements Serializable, Cloneable {
     public CadastroCliente() {
     }
 
-    public CadastroCliente(String email) {
-        this.email = email;
+    public CadastroCliente(String cpf) {
+        this.cpf = cpf;
     }
     
     public CadastroCliente(String nome, String cpf, Date dnasc, String sexo, String telefone, String celular, String email, String senha, CadastroEndereco endereco) {
