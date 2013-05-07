@@ -53,7 +53,7 @@ public class LoginBean implements LoginRemote{
     }
     
     @Override
-    public CadastroCliente buscarCadastro(Login login){
+    public CadastroCliente removerCadastro(Login login){
         CadastroCliente cadastro = null;
     if(buscarEmail(login)==true){
         Query query = em.createQuery("select c from CadastroCliente c where c.email='"+login.getEmail()+"'"
@@ -62,6 +62,20 @@ public class LoginBean implements LoginRemote{
                 cadastro = (CadastroCliente) result;                
                 em.remove(cadastro);
     }
+    return cadastro;
+    }
+    
+    @Override
+    public CadastroCliente buscarCadastro(Login login){
+        CadastroCliente cadastro = null;
+     if(login != null){        
+        Query query = em.createQuery("select c"
+                + " from CadastroCliente c where c.email='"+login.getEmail()+"'"
+                + " and c.senha='"+login.getSenha()+"'");           
+                Object result = (Object) query.getSingleResult();
+                cadastro = (CadastroCliente) result;                    
+                return cadastro;                    
+        }
     return cadastro;
     }
 }

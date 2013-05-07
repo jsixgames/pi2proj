@@ -13,7 +13,7 @@
                         <li><a href="endereco.jsp">Cadastrar endereço adicional</a></li>
                         <li><a href="manuntencaoendereco.jsp">Alterar/Remover Endereços</a></li>
                         <li><a href="fale.jsp">Listas de Desejos</a></li>
-                        <li><a href="alterarcadastro.jsp">Alterar Cadastro</a></li>                        
+                        <li><a href="AlterarClienteServlet">Alterar Cadastro</a></li>                        
                         <li><a href="encerrar.jsp">Encerrar Conta</a></li>
                     </ul>
                 </div>         

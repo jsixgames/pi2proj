@@ -24,13 +24,13 @@ public class CadastroClienteBean extends AbstractBean<CadastroCliente> implement
     }
         
    @Override
-    public CadastroCliente buscar(Login login){
+    public CadastroCliente buscar(String email, String senha){
         CadastroCliente cadastro = null;                            
-    if(login != null){
+    if(email != null && senha != null){
         try{
-        Query query = em.createQuery("select *"
-                + " from CadastroCliente c where c.email='"+login.getEmail()+"'"
-                + " and c.senha='"+login.getSenha()+"'");           
+        Query query = em.createQuery("select c"
+                + " from CadastroCliente c where c.email='"+email+"'"
+                + " and c.senha='"+senha+"'");           
                 Object result = (Object) query.getSingleResult();
                 cadastro = (CadastroCliente) result;                    
                 return cadastro;

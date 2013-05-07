@@ -17,34 +17,28 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(name = "RemoveClienteServlet", urlPatterns = {"/RemoveClienteServlet"})
-public class RemoveClienteServlet extends HttpServlet {
+@WebServlet(name = "AlterarClienteServlet", urlPatterns = {"/AlterarClienteServlet"})
+public class AlterarClienteServlet extends HttpServlet {
 
     @EJB
-    private LoginRemote loginRemote;
-    private CadastroClienteRemote clienteRemote;
+    private LoginRemote lr;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();                    
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String email = (String)session.getAttribute("emailLogado");
-        String senha = (String) session.getAttribute("senhaLogado");
         try {
-            if (request.getParameter("btn-encsim") != null && request.getParameter("btn-encsim").equals("Sim, tenho")) {
-                try {                                        
-                    Login x = new Login(email,senha); 
-                    loginRemote.removerCadastro(x);
-//                    clienteRemote.remover(x);
-                    session.invalidate();
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
-                } catch (Exception e) {                                        
-                    out.println("Problema ao excluir o usuario, provavel problema no glassfish");
-//                    request.getRequestDispatcher("painel.jsp").forward(request, response);                    
-                } 
-            }
-        } finally {
+            String email = (String)session.getAttribute("emailLogado");
+            String senha = (String)session.getAttribute("senhaLogado");            
+            Login l = new Login(email,senha);
+            CadastroCliente cc = lr.buscarCadastro(l);
+            session.setAttribute("cliente", cc);
+            request.getRequestDispatcher("alterarcadastro.jsp").forward(request, response);
+        }catch (Exception e) {
+         out.println("erro na busca");
+          }        
+        finally {
             out.close();
         }
     }

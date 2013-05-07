@@ -28,48 +28,49 @@
             <div id="painelopcoes"> 
                 <c:import url='opcoespainel.jsp' />
                 <div id="painelconteudo">
-                    <form method="post" action="CadastroClienteServlet" id="cadastro">                                                                                             
+                    <form method="post" action="AlterarClienteServlet" id="cadastro">                                                                                             
                         <div id="posformnewend">                                    
                             <h1 id="titulodadoscad">Dados Cadastrais</h1>                    
                             <b>                             
                                 <div class="linha">
                                 <span class='item'>Nome:</span> 
-                                <span class='caixa'><input type="text" name="nome" value="" maxlength="40" required /></span>
+                                <span class='caixa'><input type="text" name="nome" value="${cliente.getNome()}" maxlength="40" required /></span>
                                 <br/>
                                 <div class="linha">
                                 <span class='item'>CPF:</span>                      
-                                <span class='caixa'><input type="text" name="cpf" style="width: 100px" readonly /></span>
+                                <span class='caixa'><input type="text" name="cpf" value="${cliente.getCpf()}" style="width: 100px" readonly /></span>
                                 <br/>
                             </div>
                             <div class="linha">
                                 <span class='item'>Data de nascimento:</span>                      
-                                <span class='caixa'><input type="text" name="data" value="" style="width: 70px" required/></span>
+                                <span class='caixa'><input type="text" name="data" value="${cliente.getDnasc()}" style="width: 70px" required/></span>
                                 <br/>
                             </div>           
                             <div class="linha">
                                 <span class='item'  style="padding-top: 3px;">Sexo:</span>
-                                <span class="item" style="text-align: right; padding:3px;margin-left: 15px"><input type="radio" name="sexo" value ="masculino" required/>Masculino                  
+                                <span class="item" style="text-align: right; padding:3px;margin-left: 15px">
+                                    <input type="radio" name="sexo" value ="masculino" required/>Masculino                  
                                     <input type="radio" name="sexo" value ="feminino" required/>Feminino</span>
                                 <br/>
                             </div>                                                            
                             <div class="linha">
                                 <span class='item'>Telefone:</span>                      
-                                <span class='caixa'><input type="text" name="telefone" style="width: 90px" required/></span>
+                                <span class='caixa'><input type="text" name="telefone" value="${cliente.getTelefone()}" style="width: 90px" required/></span>
                                 <br/>
                             </div>                      
                             <div class="linha">
                                 <span class='item'>Celular:</span>                      
-                                <span class='caixa'><input type="text" name="celular" style="width: 95px" required/></span>
+                                <span class='caixa'><input type="text" name="celular" value="${cliente.getCelular()}" style="width: 95px" required/></span>
                                 <br/>
                             </div>                      
                             <div class="linha">
                                 <span class='item'>Email:</span>                      
-                                <span class='caixa'><input type="email" name="email" value="${emailLogado}" readonly/></span>                       
+                                <span class='caixa'><input type="email" name="email" value="${cliente.getEmail()}" readonly/></span>                       
                                 <br/>
                             </div> 
                             <div class="linha">
                                 <span class='item'>Senha:</span>                      
-                                <span class='caixa'><input type="password" name="senha" value="" /></span>
+                                <span class='caixa'><input type="password" name="senha" value="${cliente.getSenha()}" /></span>
                                 <br/>
                             </div>
                             <br>                            

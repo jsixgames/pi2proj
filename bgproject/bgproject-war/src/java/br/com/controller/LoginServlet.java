@@ -53,10 +53,8 @@ public class LoginServlet extends HttpServlet {
             }
             if (request.getParameter("btn_logout") != null && request.getParameter("btn_logout").equals("Logout")) {
                 try {
-                    if(session.getAttribute("verificalog") == (Object) true){
-                        session.removeAttribute("username");
-                        session.removeAttribute("emailLogado");
-                        session.setAttribute("verificalog", false);
+                    if(session.getAttribute("verificalog") == (Object) true){                        
+                        session.invalidate();
                         request.getRequestDispatcher("index.jsp").forward(request, response);
                     }
                 } catch (Exception e) {
