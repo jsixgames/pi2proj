@@ -2,7 +2,6 @@ package br.com.matriz;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 
 
 public class Login extends javax.swing.JFrame {
@@ -15,8 +14,9 @@ public class Login extends javax.swing.JFrame {
              @Override
              public void actionPerformed(ActionEvent ae) {
                  MatrizHome m = new MatrizHome();
+                 m.setLocationRelativeTo(null);
                  m.setVisible(true);
-                 dispose();
+                 dispose();                 
                  
              }
          });
@@ -161,12 +161,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-
-    public static void main(String args[]){
-        Login l =new Login();
-        l.setVisible(true);
-
-    }
-
+   
 
 }

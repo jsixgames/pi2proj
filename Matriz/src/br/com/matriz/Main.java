@@ -5,9 +5,9 @@ public class Main {
    
     public static void main(String[] args) {
         
-//        Login lg = new Login();
-//        lg.setLocationRelativeTo(null);
-//        lg.setVisible(true);
+        Login lg = new Login();
+        lg.setLocationRelativeTo(null);
+        lg.setVisible(true);
         
 //        MatrizHome mh = new MatrizHome();
 //        mh.setLocationRelativeTo(null);
@@ -33,10 +33,10 @@ public class Main {
 //        rd.setLocationRelativeTo(null);
 //        rd.setVisible(true);
        
-        CadastrarProd cp = new CadastrarProd();
-        cp.setLocationRelativeTo(null);
-        cp.setVisible(true);
-        
+//        CadastrarProd cp = new CadastrarProd();
+//        cp.setLocationRelativeTo(null);
+//        cp.setVisible(true);
+//        
 //        AlterarProd ap = new AlterarProd();
 //        ap.setLocationRelativeTo(null);
 //        ap.setVisible(true);
