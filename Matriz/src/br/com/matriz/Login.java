@@ -1,10 +1,25 @@
 package br.com.matriz;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 
 public class Login extends javax.swing.JFrame {
     
      public Login() {
         initComponents();
+        
+        jButton1.addActionListener(new ActionListener() {
+
+             @Override
+             public void actionPerformed(ActionEvent ae) {
+                 MatrizHome m = new MatrizHome();
+                 m.setVisible(true);
+                 dispose();
+                 
+             }
+         });
     }
      
      @SuppressWarnings("unchecked")
@@ -58,6 +73,7 @@ public class Login extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Submit");
+        jButton1.setName(""); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/matriz/logo-icon.png"))); // NOI18N
 
@@ -122,10 +138,17 @@ public class Login extends javax.swing.JFrame {
         getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
 
+     
+     
+     
+     
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPasswordField1ActionPerformed
-
+    
+    
+   
+    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -138,4 +161,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public static void main(String args[]){
+        Login l =new Login();
+        l.setVisible(true);
+
+    }
+
+
 }

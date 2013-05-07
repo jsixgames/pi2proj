@@ -4,6 +4,8 @@
  */
 package br.com.matriz;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 /**
@@ -19,6 +21,17 @@ public class AlterarProd extends JFrame {
      */
     public AlterarProd() {
         initComponents();
+        
+        jButton4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Produto p = new Produto();
+                p.setVisible(true);
+                dispose();
+            }
+
+        });
     }
     
  @SuppressWarnings("unchecked")

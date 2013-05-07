@@ -1,5 +1,7 @@
 package br.com.matriz;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 
@@ -7,6 +9,26 @@ public class MatrizHome extends JFrame {
     
     public MatrizHome() {
         initComponents();
+        jButton1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Departamento d = new Departamento();
+                d.setVisible(true);
+                dispose();
+            }
+        });
+        
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Produto p = new Produto();
+                p.setVisible(true);
+                dispose();
+            }
+        });
+        
     }
     
 @SuppressWarnings("unchecked")
