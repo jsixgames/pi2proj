@@ -8,6 +8,7 @@ import javax.ejb.Remote;
 public interface LoginRemote {        
     public boolean buscarEmail(Login login);
     public String buscarNome(Login login);
+    public CadastroCliente removerCadastro(Login login);
     public CadastroCliente buscarCadastro(Login login);
  
 }

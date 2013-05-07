@@ -14,7 +14,7 @@ public interface CadastroClienteRemote {
 
     public void remover(Login cliente);
 
-    public CadastroCliente buscar(Login login);
+    public CadastroCliente buscar(String email, String senha);
 
     List<CadastroCliente> buscarTodos();
 
