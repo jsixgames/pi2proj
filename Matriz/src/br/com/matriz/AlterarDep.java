@@ -25,7 +25,7 @@ public class AlterarDep extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Departamento dep = new Departamento();
+                DepartamentoMenu dep = new DepartamentoMenu();
                 dep.setVisible(true);
                 dispose();
             }

@@ -5,44 +5,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 
-public class Departamento extends JFrame {
+public class ProdutoMenu extends JFrame {
     
    
-    public Departamento() {
+    public ProdutoMenu() {
         initComponents();
-        
-        jButton1.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                CadastrarDep cadDep = new CadastrarDep();
-                cadDep.setVisible(true);
-                dispose();
-            }
-
-        });
-        
-        jButton2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                AlterarDep altDep = new AlterarDep();
-                altDep.setVisible(true);
-                dispose();
-            }
-
-        });
-        
-        jButton3.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                RemoverDep remDep = new RemoverDep();
-                remDep.setVisible(true);
-                dispose();
-            }
-
-        });
         
         jButton6.addActionListener(new ActionListener() {
 
@@ -53,10 +20,44 @@ public class Departamento extends JFrame {
                 dispose();
             }
 
-        });   
+        });
+        
+        jButton1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                CadastrarProd cadProd = new CadastrarProd();
+                cadProd.setVisible(true);
+                dispose();
+            }
+
+        });
+        
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                AlterarProd altProd = new AlterarProd();
+                altProd.setVisible(true);
+                dispose();
+            }
+
+        });
+        
+        jButton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                RemoverProd revProd = new RemoverProd();
+                revProd.setVisible(true);
+                dispose();
+            }
+
+        });
+        
     }
     
- @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,20 +76,20 @@ public class Departamento extends JFrame {
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("BOXGAMES - APP DESKTOP - DEPARTAMENTO");
-        setMinimumSize(new java.awt.Dimension(580, 430));
+        setTitle("BOXGAMES - APP DESKTOP - PRODUTOS");
+        setMinimumSize(new java.awt.Dimension(580, 450));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(580, 430));
+        jPanel1.setMinimumSize(new java.awt.Dimension(580, 450));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 28)); // NOI18N
-        jLabel2.setText("Manutenção de Departamentos");
+        jLabel2.setText("Manutenção de Produtos");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(jLabel2);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Cadastrar Departamentos");
+        jButton1.setText("Cadastrar Produtos");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -96,10 +97,10 @@ public class Departamento extends JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Alterar Departamentos");
+        jButton2.setText("Alterar Produtos");
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setText("Remover Departamentos");
+        jButton3.setText("Remover Produtos");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -107,7 +108,7 @@ public class Departamento extends JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setText("Listar Departamentos");
+        jButton4.setText("Listar Produtos");
 
         jButton6.setText("Voltar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -147,9 +148,9 @@ public class Departamento extends JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);

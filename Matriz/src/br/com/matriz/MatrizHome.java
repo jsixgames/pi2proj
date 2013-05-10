@@ -13,7 +13,7 @@ public class MatrizHome extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Departamento d = new Departamento();
+                DepartamentoMenu d = new DepartamentoMenu();
                 d.setVisible(true);
                 dispose();
             }
@@ -23,7 +23,7 @@ public class MatrizHome extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Produto p = new Produto();
+                ProdutoMenu p = new ProdutoMenu();
                 p.setVisible(true);
                 dispose();
             }

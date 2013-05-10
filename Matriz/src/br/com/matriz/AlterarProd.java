@@ -25,7 +25,7 @@ public class AlterarProd extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Produto p = new Produto();
+                ProdutoMenu p = new ProdutoMenu();
                 p.setVisible(true);
                 dispose();
             }

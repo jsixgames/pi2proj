@@ -4,10 +4,10 @@
  */
 package br.com.matriz;
 
+import br.com.modelos.Departamento;
+import br.controller.DepartamentoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -29,7 +29,7 @@ public class CadastrarDep extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Departamento dep = new Departamento();
+                DepartamentoMenu dep = new DepartamentoMenu();
                 dep.setVisible(true);
                 dispose();
             }
@@ -45,13 +45,12 @@ public class CadastrarDep extends JFrame {
                      repaint();
                  }
                  else {
+                     Departamento con = new Departamento(jTextField4.getText());
+                     DepartamentoController control = null;                     
+                     control.create(con);
+                     dispose();
+                     JOptionPane.showMessageDialog(null, "Plataforma adicionado com sucesso");
                      
-//                     Departamento con = new Departamento(jTextField4.getText());
-//                     ConsoleController control = null;                     
-//                     control.create(con);
-//                     dispose();
-//                     JOptionPane.showMessageDialog(null, "Plataforma adicionado com sucesso");
-//                     
                  }
             }
         });
