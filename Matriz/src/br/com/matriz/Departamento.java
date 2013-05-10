@@ -11,6 +11,39 @@ public class Departamento extends JFrame {
     public Departamento() {
         initComponents();
         
+        jButton1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                CadastrarDep cadDep = new CadastrarDep();
+                cadDep.setVisible(true);
+                dispose();
+            }
+
+        });
+        
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                AlterarDep altDep = new AlterarDep();
+                altDep.setVisible(true);
+                dispose();
+            }
+
+        });
+        
+        jButton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                RemoverDep remDep = new RemoverDep();
+                remDep.setVisible(true);
+                dispose();
+            }
+
+        });
+        
         jButton6.addActionListener(new ActionListener() {
 
             @Override
