@@ -23,7 +23,11 @@
                     <p class="carticone"></p>
                     <a href="#" class="cartLink">
                         <span>Carrinho</span>
-                        <span class="simpleCart_quantity">0</span>
+                        <span><%
+                        if(session.getAttribute("qtde")==null){
+                        out.print("0");
+                        }else{out.print(session.getAttribute("qtde"));};                                                
+                        %></span>
                         <span class="" style="display: none;">Item</span>
                         <span class="" style="display: block;">Itens</span>
                         <span>R$</span>

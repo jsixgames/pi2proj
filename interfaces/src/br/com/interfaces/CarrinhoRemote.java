@@ -11,4 +11,6 @@ public interface CarrinhoRemote {
     public void removeItem(String item);
 
     public Collection getItems();
+    
+    public int qtde();
 }

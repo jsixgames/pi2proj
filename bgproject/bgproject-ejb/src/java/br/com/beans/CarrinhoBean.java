@@ -9,7 +9,7 @@ import javax.ejb.Stateful;
 @Stateful(mappedName="ejb/Cart")
 public class CarrinhoBean implements CarrinhoRemote {
 
-    private ArrayList items;
+    private ArrayList<String> items;
 
     @PostConstruct
     public void initialize() {
@@ -29,9 +29,12 @@ public class CarrinhoBean implements CarrinhoRemote {
     }
 
     @Override
-    public Collection getItems() {
+    public Collection getItems() {        
         return items;
     }
-
-  
+    
+    @Override
+    public int qtde(){        
+        return items.size();
+    }
 }
