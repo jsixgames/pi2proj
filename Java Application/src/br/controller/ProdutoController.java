@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package exemplo.controller;
+package br.controller;
 
 import br.com.interfaces.ProdutoFacadeRemote;
 import br.com.modelos.Produto;
@@ -24,7 +24,7 @@ public class ProdutoController {
         Properties props = new Properties();
         props.load(new java.io.FileInputStream("jndi.properties"));
         InitialContext ctx = new InitialContext(props);
-        produtoFacade = (ProdutoFacadeRemote) ctx.lookup("ejb/ProdutoFacade");
+        produtoFacade = (ProdutoFacadeRemote) ctx.lookup("ejb/CadastroProdutoBean");
     }
 
     public void create(Produto entity) {
