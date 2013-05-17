@@ -23,12 +23,13 @@ public class Departamento implements Serializable, Cloneable {
     private Long id;
     private String nome;
 
-    protected Departamento() {
+    public Departamento() {
     }
 
     public Departamento(String nome) {
         this.nome = nome;
     }
+    
     
     public Departamento(Long id,String nome) {
         this.id = id;

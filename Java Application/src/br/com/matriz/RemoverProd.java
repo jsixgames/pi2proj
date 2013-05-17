@@ -4,9 +4,15 @@
  */
 package br.com.matriz;
 
+import br.com.modelos.Produto;
+import br.controller.ProdutoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,7 +42,49 @@ public class RemoverProd extends JFrame {
 
         });
         
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 
+                 
+                     Produto prd = new Produto();
+                     prd.setId(Long.parseLong(jTextField1.getText()));
+                     ProdutoController control = null;                     
+                    try {
+                        control = new ProdutoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                     control.remove(prd);
+                     dispose();
+                     JOptionPane.showMessageDialog(null, "Produto removido com sucesso");
+                     
+                 
+            }
+        });
         
+        jButton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 
+                 
+                     
+                     ProdutoController control = null;                     
+                    try {
+                        control = new ProdutoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                     List<Produto> lista = control.findAll();
+                     
+                     JOptionPane.showMessageDialog(null, lista);
+                     JOptionPane.showMessageDialog(null, "Produto removido com sucesso");
+                     
+                 
+            }
+        });
     }
     
     @SuppressWarnings("unchecked")
@@ -139,7 +187,7 @@ public class RemoverProd extends JFrame {
             }
         });
 
-        jButton3.setText("Remover");
+        jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

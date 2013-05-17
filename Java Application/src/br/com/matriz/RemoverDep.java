@@ -4,9 +4,16 @@
  */
 package br.com.matriz;
 
+import br.com.modelos.Departamento;
+import br.controller.DepartamentoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,6 +39,47 @@ public class RemoverDep extends JFrame {
             }
 
         });
+        
+        jButton2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 if(jTextField1.getText().isEmpty()){
+                     jLabel1.setVisible(true);
+                     repaint();
+                 }
+                 else {
+                     Departamento con;
+                    con = new Departamento();
+                     con.setId(Long.parseLong(jTextField1.getText()));
+                     DepartamentoController control = null;                     
+                    try {
+                        control = new DepartamentoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                     control.remove(con);
+                     dispose();
+                     JOptionPane.showMessageDialog(null, "Plataforma Removida com sucesso");
+                     
+                 }
+            }
+        });
+        
+        DepartamentoController control = null;                     
+                    try {
+                        control = new DepartamentoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    String l = null;
+                    List<Departamento> lista = new ArrayList<Departamento>();
+                    lista = control.findAll();
+                    for (int i = 0; i < lista.size(); i++) {  
+                          l += lista.get(i)+"\n";  
+  
+        } 
+                    JOptionPane.showMessageDialog(null,l);
     }
     
      @SuppressWarnings("unchecked")

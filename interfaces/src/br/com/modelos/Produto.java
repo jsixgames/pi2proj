@@ -17,7 +17,6 @@ public class Produto implements Serializable {
     private String nomeProd;
     private String categProd;
     private double precoProd;
-    private String descProd;
 
     public long getId() {
         return id;
@@ -51,22 +50,13 @@ public class Produto implements Serializable {
         this.precoProd = precoProd;
     }
 
-    public String getDescProd() {
-        return descProd;
-    }
-
-    public void setDescProd(String descProd) {
-        this.descProd = descProd;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.id);
-        hash = 71 * hash + Objects.hashCode(this.nomeProd);
-        hash = 71 * hash + Objects.hashCode(this.categProd);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.precoProd) ^ (Double.doubleToLongBits(this.precoProd) >>> 32));
-        hash = 71 * hash + Objects.hashCode(this.descProd);
+        hash = 41 * hash + Objects.hashCode(this.id);
+        hash = 41 * hash + Objects.hashCode(this.nomeProd);
+        hash = 41 * hash + Objects.hashCode(this.categProd);
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.precoProd) ^ (Double.doubleToLongBits(this.precoProd) >>> 32));
         return hash;
     }
 
@@ -91,15 +81,14 @@ public class Produto implements Serializable {
         if (Double.doubleToLongBits(this.precoProd) != Double.doubleToLongBits(other.precoProd)) {
             return false;
         }
-        if (!Objects.equals(this.descProd, other.descProd)) {
-            return false;
-        }
         return true;
     }
 
+    
+    
     @Override
     public String toString() {
-        return "Produto{" + "id=" + id + ", nomeProd=" + nomeProd + ", categProd=" + categProd + ", precoProd=" + precoProd + ", descProd=" + descProd + '}';
+        return "Produto{" + "id=" + id + ", nomeProd=" + nomeProd + ", categProd=" + categProd + ", precoProd=" + precoProd+'}';
     }
 
     

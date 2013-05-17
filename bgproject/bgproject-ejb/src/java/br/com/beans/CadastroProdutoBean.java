@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Calebe de Paula Bianchini
  */
-@Stateless(mappedName = "ejb/ProdutoFacade")
+@Stateless(mappedName = "ejb/CadastroProdutoBean")
 public class CadastroProdutoBean extends AbstractFacade<Produto> implements ProdutoFacadeRemote {
 
     @PersistenceContext(unitName = "bgproject-ejbPU")

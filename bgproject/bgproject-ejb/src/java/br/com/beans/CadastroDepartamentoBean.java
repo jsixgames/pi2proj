@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 
-@Stateless(mappedName = "ejb/DepartamentoBean")
+@Stateless(mappedName = "ejb/CadastroDepartamentoBean")
 public class CadastroDepartamentoBean extends AbstractFacade<Departamento> implements ConsoleFacadeRemote {
 
     @PersistenceContext(unitName = "bgproject-ejbPU")
@@ -21,4 +21,5 @@ public class CadastroDepartamentoBean extends AbstractFacade<Departamento> imple
     public CadastroDepartamentoBean() {
         super(Departamento.class);
     }
+    
 }
