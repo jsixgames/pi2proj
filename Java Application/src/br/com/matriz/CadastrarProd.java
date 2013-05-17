@@ -10,9 +10,11 @@ import br.controller.DepartamentoController;
 import br.controller.ProdutoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -28,6 +30,19 @@ public class CadastrarProd extends JFrame {
      */
     public CadastrarProd() {
         initComponents();
+        DepartamentoController control = null;                     
+                    try {
+                        control = new DepartamentoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    List<Departamento> lista = new ArrayList<Departamento>();
+                    lista = control.findAll();
+                    for (int i = 0; i < lista.size(); i++) { 
+                          jComboBox2.addItem(lista.get(i));
+  
+        } 
+        
         
         jButton4.addActionListener(new ActionListener() {
 
@@ -148,8 +163,6 @@ public class CadastrarProd extends JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));

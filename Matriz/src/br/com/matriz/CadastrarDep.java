@@ -8,6 +8,8 @@ import br.com.modelos.Departamento;
 import br.controller.DepartamentoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -46,7 +48,12 @@ public class CadastrarDep extends JFrame {
                  }
                  else {
                      Departamento con = new Departamento(jTextField4.getText());
-                     DepartamentoController control = null;                     
+                     DepartamentoController control = null;  
+                    try {
+                        control = new DepartamentoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                      control.create(con);
                      dispose();
                      JOptionPane.showMessageDialog(null, "Plataforma adicionado com sucesso");

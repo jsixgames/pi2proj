@@ -4,8 +4,13 @@
  */
 package br.com.matriz;
 
+import br.com.modelos.Departamento;
+import br.controller.DepartamentoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -32,6 +37,20 @@ public class RemoverDep extends JFrame {
             }
 
         });
+        
+        DepartamentoController depc = null;
+        try {
+            depc = new DepartamentoController();
+        } catch (Exception ex) {
+            Logger.getLogger(RemoverDep.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        List<Departamento> lista = null;
+        lista = depc.findAll();
+        
+        for ( Departamento dep : lista) {
+         System.out.println(lista.get(0));
+}
     }
     
      @SuppressWarnings("unchecked")

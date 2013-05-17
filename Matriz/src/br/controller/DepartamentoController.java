@@ -24,7 +24,7 @@ public class DepartamentoController {
         Properties props = new Properties();
         props.load(new java.io.FileInputStream("jndi.properties"));
         InitialContext ctx = new InitialContext();
-        consoleFacade = (ConsoleFacadeRemote) ctx.lookup("ejb/ConsoleFacade");
+        consoleFacade = (ConsoleFacadeRemote) ctx.lookup("ejb/CadastroDepartamentoBean");
     }
 
     public void create(Departamento entity) {

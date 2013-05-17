@@ -4,8 +4,12 @@
  */
 package br.com.beans;
 
+import br.com.modelos.Departamento;
+import br.com.modelos.Login;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -37,9 +41,11 @@ public abstract class AbstractFacade<T> {
     }
 
     public List<T> findAll() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
-        cq.select(cq.from(entityClass));
-        return getEntityManager().createQuery(cq).getResultList();
+ 
+                Query query = getEntityManager().createQuery("select nome"
+                + " from Departamento");           
+                 return query.getResultList();	
+			  
     }
 
     public List<T> findRange(int[] range) {

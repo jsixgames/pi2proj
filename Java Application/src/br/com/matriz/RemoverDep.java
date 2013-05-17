@@ -66,20 +66,7 @@ public class RemoverDep extends JFrame {
             }
         });
         
-        DepartamentoController control = null;                     
-                    try {
-                        control = new DepartamentoController();
-                    } catch (Exception ex) {
-                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    String l = null;
-                    List<Departamento> lista = new ArrayList<Departamento>();
-                    lista = control.findAll();
-                    for (int i = 0; i < lista.size(); i++) {  
-                          l += lista.get(i)+"\n";  
-  
-        } 
-                    JOptionPane.showMessageDialog(null,l);
+       
     }
     
      @SuppressWarnings("unchecked")
