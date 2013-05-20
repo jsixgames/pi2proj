@@ -48,7 +48,7 @@ public class CadastrarDep extends JFrame {
                  }
                  else {
                      Departamento con = new Departamento(jTextField4.getText());
-                     DepartamentoController control = null;  
+                     DepartamentoController control = null;                     
                     try {
                         control = new DepartamentoController();
                     } catch (Exception ex) {

@@ -43,5 +43,8 @@ public class DepartamentoController {
         return (consoleFacade.findAll());
     }
     
+    public Departamento find(Object id) {
+        return (consoleFacade.find(id));
+    }
     
 }
