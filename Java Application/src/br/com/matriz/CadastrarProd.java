@@ -65,7 +65,7 @@ public class CadastrarProd extends JFrame {
                  }
                  else {
                      Produto prd = new Produto();
-                     prd.setNomeProd(jTextField2.getText());
+                     prd.setNomeProd(jTextField2.getText().toUpperCase());
                      prd.setPrecoProd(Double.parseDouble(jTextField3.getText()));
                      prd.setCategProd(jComboBox2.getSelectedItem().toString());
                      ProdutoController control = null;                     

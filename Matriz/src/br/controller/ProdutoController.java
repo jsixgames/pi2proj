@@ -4,8 +4,8 @@
  */
 package br.controller;
 
-import br.com.interfaces.ConsoleFacadeRemote;
-import br.com.modelos.Departamento;
+import br.com.interfaces.ProdutoFacadeRemote;
+import br.com.modelos.Produto;
 import java.util.List;
 import java.util.Properties;
 import javax.ejb.EJB;
@@ -15,36 +15,33 @@ import javax.naming.InitialContext;
  *
  * @author Calebe de Paula Bianchini
  */
-public class DepartamentoController {
-     
-    @EJB 
-    private ConsoleFacadeRemote consoleFacade;
+public class ProdutoController {
 
-    public DepartamentoController() throws Exception {
+    @EJB
+    private ProdutoFacadeRemote produtoFacade;
+
+    public ProdutoController() throws Exception {
         Properties props = new Properties();
         props.load(new java.io.FileInputStream("jndi.properties"));
-        InitialContext ctx = new InitialContext();
-        consoleFacade = (ConsoleFacadeRemote) ctx.lookup("ejb/CadastroDepartamentoBean");
+        InitialContext ctx = new InitialContext(props);
+        produtoFacade = (ProdutoFacadeRemote) ctx.lookup("ejb/CadastroProdutoBean");
     }
 
-    public void create(Departamento entity) {
-        consoleFacade.create(entity);
+    public void create(Produto entity) {
+        produtoFacade.create(entity);
     }
 
-    public void edit(Departamento entity) {
-        consoleFacade.edit(entity);
+    public void edit(Produto entity) {
+        produtoFacade.edit(entity);
     }
     
-    public void remove(Departamento entity) {
-        consoleFacade.remove(entity);
+    public void remove(Produto entity) {
+        produtoFacade.remove(entity);
     }
     
-    public List<Departamento> findAll() {
-        return (consoleFacade.findAll());
+    public List<Produto> findAll() {
+        return (produtoFacade.findAll());
     }
     
-    public Departamento find(Object id) {
-        return (consoleFacade.find(id));
-    }
     
 }

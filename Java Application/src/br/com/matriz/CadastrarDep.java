@@ -47,7 +47,7 @@ public class CadastrarDep extends JFrame {
                      repaint();
                  }
                  else {
-                     Departamento con = new Departamento(jTextField4.getText());
+                     Departamento con = new Departamento(jTextField4.getText().toUpperCase());
                      DepartamentoController control = null;                     
                     try {
                         control = new DepartamentoController();
@@ -55,8 +55,10 @@ public class CadastrarDep extends JFrame {
                         Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
                     }
                      control.create(con);
-                     dispose();
                      JOptionPane.showMessageDialog(null, "Plataforma adicionado com sucesso");
+                     DepartamentoMenu depM = new DepartamentoMenu();
+                     depM.setVisible(true);
+                     dispose();
                      
                  }
             }
