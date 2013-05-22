@@ -8,6 +8,7 @@ import br.com.modelos.Departamento;
 import br.controller.DepartamentoController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -25,7 +26,8 @@ public class AlterarDep extends JFrame {
      * Creates new customizer CadastrarProd
      */
     public AlterarDep() {
-        initComponents();
+        initComponents();        
+                
         jButton8.addActionListener(new ActionListener() {
 
             @Override

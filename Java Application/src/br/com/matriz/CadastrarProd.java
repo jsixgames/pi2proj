@@ -75,8 +75,10 @@ public class CadastrarProd extends JFrame {
                         Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
                     }
                      control.create(prd);
-                     dispose();
                      JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso");
+                     ProdutoMenu depM = new ProdutoMenu();
+                     depM.setVisible(true);
+                     dispose();
                      
                  }
             }

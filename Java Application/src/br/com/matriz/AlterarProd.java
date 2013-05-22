@@ -84,9 +84,10 @@ public class AlterarProd extends JFrame {
                      prod.setId(Long.parseLong(jTextField12.getText()));
                      prod.setNomeProd(jTextField11.getText().toUpperCase());
                      prod.setPrecoProd(Double.parseDouble(jTextField13.getText()));
+                     prod.setCategProd(jTextField14.getText());
                      control.edit(prod);
                      JOptionPane.showMessageDialog(null, "Produto alterada com sucesso!");
-                     DepartamentoMenu depM = new DepartamentoMenu();
+                     ProdutoMenu depM = new ProdutoMenu();
                      depM.setVisible(true);
                      dispose();
                 }

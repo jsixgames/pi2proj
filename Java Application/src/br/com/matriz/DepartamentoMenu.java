@@ -44,6 +44,17 @@ public class DepartamentoMenu extends JFrame {
 
         });
         
+        jButton4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                ListaDep remDep = new ListaDep();
+                remDep.setVisible(true);
+                dispose();
+            }
+
+        });
+        
         jButton6.addActionListener(new ActionListener() {
 
             @Override

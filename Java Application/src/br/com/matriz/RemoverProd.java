@@ -41,13 +41,41 @@ public class RemoverProd extends JFrame {
             }
 
         });
+        jButton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                if(jTextField1.getText().isEmpty()){
+                    jLabel1.setVisible(true);
+                }else{
+                        ProdutoController control = null;
+                    try {
+                        control = new ProdutoController();
+                    } catch (Exception ex) {
+                        Logger.getLogger(AlterarDep.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    Object index = jTextField1.getText().toString();
+                    Produto prod = new Produto();
+                    prod = control.find(index);
+                    jTextField2.setText(prod.getNomeProd());
+                    jTextField2.setEditable(false);
+                    jTextField3.setText(String.valueOf(prod.getPrecoProd()));
+                    jTextField3.setEditable(false);
+                    jTextField4.setText(prod.getCategProd());
+                    jTextField4.setEditable(false);
+
+                }
+                
+                
+            }
+
+        });
         
         jButton2.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                 
-                 
+
                      Produto prd = new Produto();
                      prd.setId(Long.parseLong(jTextField1.getText()));
                      ProdutoController control = null;                     
@@ -64,26 +92,31 @@ public class RemoverProd extends JFrame {
             }
         });
         
-        jButton3.addActionListener(new ActionListener() {
+        jButton2.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
-                 
-                 
-                     
-                     ProdutoController control = null;                     
+            public void actionPerformed(ActionEvent ae) {
+                if(jTextField1.getText().isEmpty()){
+                    jLabel5.setText("Favor informar o codigo para exclusao");
+                    jLabel5.setVisible(true);
+                }else{
+                
+                     ProdutoController control = null;
                     try {
                         control = new ProdutoController();
                     } catch (Exception ex) {
-                        Logger.getLogger(CadastrarDep.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(AlterarDep.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                     List<Produto> lista = control.findAll();
-                     
-                     JOptionPane.showMessageDialog(null, lista);
-                     JOptionPane.showMessageDialog(null, "Produto removido com sucesso");
-                     
-                 
+                     Produto prod = new Produto();
+                     prod.setId(Long.parseLong(jTextField1.getText()));
+                     control.remove(prod);
+                     JOptionPane.showMessageDialog(null, "Produto removido com sucesso!");
+                     ProdutoMenu depM = new ProdutoMenu();
+                     depM.setVisible(true);
+                     dispose();
+                }
             }
+
         });
     }
     
@@ -117,6 +150,7 @@ public class RemoverProd extends JFrame {
         jButton4 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BOXGAMES - APP DESKTOP - REMOVER PRODUTO");
@@ -194,12 +228,17 @@ public class RemoverProd extends JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 255));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(189, 375, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -210,20 +249,18 @@ public class RemoverProd extends JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jTextField1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton3))
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTextField1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3))
+                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +286,11 @@ public class RemoverProd extends JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -310,6 +351,7 @@ public class RemoverProd extends JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
