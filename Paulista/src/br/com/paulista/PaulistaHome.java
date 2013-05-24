@@ -82,7 +82,7 @@ public class PaulistaHome extends JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setText("Relatório/Estoque Filiais");
+        jButton3.setText("Estoque");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
