@@ -16,7 +16,7 @@ import javax.persistence.Query;
  *
  * @author Calebe de Paula Bianchini
  */
-@Stateless(mappedName = "ejb/CadastroProdutoBean")
+@Stateless(mappedName = "ejb/CadastroEstoqueBean")
 public class CadastroEstoqueBean extends AbstractFacade<Estoque> implements EstoqueFacadeRemote {
 
     @PersistenceContext(unitName = "bgproject-ejbPU")
