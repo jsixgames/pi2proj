@@ -8,6 +8,7 @@ import br.com.modelos.Departamento;
 import br.com.modelos.Produto;
 import br.controller.DepartamentoController;
 import br.controller.ProdutoController;
+import br.tabelas.TabelaPlataforma;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -35,25 +36,23 @@ public class ListaDep extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                ProdutoMenu p = new ProdutoMenu();
+                DepartamentoMenu p = new DepartamentoMenu();
                 p.setVisible(true);
                 dispose();
             }
 
         });
         
-        
-       jTable1.setModel(new javax.swing.table.DefaultTableModel(
-               
-            new Object [][] {listarDepartamentos()
-            },
-            new String [] { "Id", "Departamento"}
-        ));
-        
+       
+       
+       
+        TabelaPlataforma tabelaDados = new TabelaPlataforma(listarDepartamentos());
+       jTable1.setModel(tabelaDados);
+       jTable1.repaint();
 
     }
     
-    Object[][] listarDepartamentos(){
+    List<Departamento> listarDepartamentos(){
         DepartamentoController control = null;
         try {
             control = new DepartamentoController();
@@ -61,13 +60,8 @@ public class ListaDep extends JFrame {
             Logger.getLogger(ListaDep.class.getName()).log(Level.SEVERE, null, ex);
         }
         List<Departamento> lista = control.findAll();
-        Object vetorDep[][] = new Object[lista.size()][2];
-        for(int i = 0; i< lista.size();i++){
-            
-        }
-        return vetorDep;
-        
-    
+        return lista;
+
     }
     
     @SuppressWarnings("unchecked")
@@ -128,13 +122,13 @@ public class ListaDep extends JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nome"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -144,20 +138,19 @@ public class ListaDep extends JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(155, Short.MAX_VALUE))
         );
@@ -170,7 +163,7 @@ public class ListaDep extends JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

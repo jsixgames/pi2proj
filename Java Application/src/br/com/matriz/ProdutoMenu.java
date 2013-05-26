@@ -55,6 +55,17 @@ public class ProdutoMenu extends JFrame {
 
         });
         
+        jButton4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                ListaProd revProd = new ListaProd();
+                revProd.setVisible(true);
+                dispose();
+            }
+
+        });
+        
     }
     
     @SuppressWarnings("unchecked")
