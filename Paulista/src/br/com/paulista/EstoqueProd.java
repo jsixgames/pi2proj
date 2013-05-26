@@ -38,6 +38,17 @@ public class EstoqueProd extends JFrame {
 
         });
         
+        jButton5.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                AdicionarEst ph = new AdicionarEst();
+                ph.setLocationRelativeTo(null);
+                ph.setVisible(true);
+                dispose();
+            }
+
+        });
     }
     
     @SuppressWarnings("unchecked")

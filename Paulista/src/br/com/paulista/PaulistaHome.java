@@ -31,6 +31,16 @@ public class PaulistaHome extends JFrame {
             }
         });
         
+        jButton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                EstoqueProd rvd = new EstoqueProd();
+                rvd.setLocationRelativeTo(null);
+                rvd.setVisible(true);
+                dispose();
+            }
+        });
     }
     
 @SuppressWarnings("unchecked")
