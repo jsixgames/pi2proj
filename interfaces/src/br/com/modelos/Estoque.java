@@ -14,6 +14,7 @@ public class Estoque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long idProduto;
     private String nomeProd;
     private String categProd;
     private double precoProd;
@@ -25,6 +26,14 @@ public class Estoque implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Long getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
     }
 
     public String getNomeProd() {

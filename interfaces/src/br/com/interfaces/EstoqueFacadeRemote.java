@@ -5,7 +5,6 @@
 package br.com.interfaces;
 
 import br.com.modelos.Estoque;
-import br.com.modelos.Produto;
 import java.util.List;
 import javax.ejb.Remote;
 
