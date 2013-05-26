@@ -26,6 +26,11 @@ public class CadastroEstoqueBean extends AbstractFacade<Estoque> implements Esto
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    @Override
+    public void create(Estoque entity) {
+        getEntityManager().persist(entity);
+    }
 
     public CadastroEstoqueBean() {
         super(Estoque.class);

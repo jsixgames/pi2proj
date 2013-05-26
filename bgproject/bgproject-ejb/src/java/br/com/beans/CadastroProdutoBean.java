@@ -54,9 +54,8 @@ public class CadastroProdutoBean extends AbstractFacade<Produto> implements Prod
     @Override
     public List<Produto> findAll() {
         Query query = getEntityManager().createQuery("select t"
-                + " from produto as t");
-        List<Produto> listaProd = query.getResultList();
-        return listaProd;
+                + " from Produto as t");
+        return query.getResultList();
     }
 
 }

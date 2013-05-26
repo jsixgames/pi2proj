@@ -35,8 +35,8 @@ public class CadastroDepartamentoBean extends AbstractFacade<Departamento> imple
 
     @Override
     public List<Departamento> findAll() {
-        Query query = getEntityManager().createQuery("select nome"
-                + " from Departamento");           
+        Query query = getEntityManager().createQuery("select t"
+                + " from Departamento as t");           
                  return query.getResultList();	
     }
     
