@@ -7,6 +7,7 @@
     <class>br.com.modelos.CadastroEndereco</class>
     <class>br.com.modelos.Departamento</class>
     <class>br.com.modelos.Produto</class>
+    <class>br.com.modelos.Estoque</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.format_sql" value="true"/>
