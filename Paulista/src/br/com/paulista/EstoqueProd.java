@@ -4,9 +4,19 @@
  */
 package br.com.paulista;
 
+import br.com.modelos.Estoque;
+import br.controller.EstoqueController;
+import br.tabelas.TabelaEstoque;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 
 /**
  *
@@ -25,6 +35,34 @@ public class EstoqueProd extends JFrame {
         jTable1.getColumnModel().getColumn(1).setHeaderValue("Nome");     
         jTable1.getColumnModel().getColumn(2).setHeaderValue("QTD");     
         jTable1.getColumnModel().getColumn(3).setHeaderValue("Dep.");     
+        jButton6.setVisible(false);
+        jTable1.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+                jButton6.setVisible(true);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+              
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+                
+            }
+        });
         
         jButton4.addActionListener(new ActionListener() {
 
@@ -49,6 +87,24 @@ public class EstoqueProd extends JFrame {
             }
 
         });
+        
+        EstoqueController control = null;
+        try {
+            control = new EstoqueController();
+        } catch (Exception ex) {
+            Logger.getLogger(EstoqueProd.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        
+//        List<Estoque> listaEstoque = control.findAll();
+//        
+//        for(int i =0;i<listaEstoque.size();i++){
+//            
+//            
+//        }
+        
+        TabelaEstoque  modelo = new TabelaEstoque(control.findAll());
+        jTable1.setModel(modelo);
+        jTable1.repaint();
     }
     
     @SuppressWarnings("unchecked")
@@ -112,7 +168,7 @@ public class EstoqueProd extends JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Plataforma", "Preço", "Quantidade"
+                "ID", "Plataforma", "Nome", "Preço", "Quantidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -136,7 +192,7 @@ public class EstoqueProd extends JFrame {
             }
         });
 
-        jButton6.setText("Remover");
+        jButton6.setText("Atualizar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
