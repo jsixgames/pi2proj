@@ -57,10 +57,9 @@ public class CadastroEstoqueBean extends AbstractFacade<Estoque> implements Esto
 
     @Override
     public List<Estoque> findAll() {
-        Query query = getEntityManager().createQuery("select t"
-                + " from banco.Estoque as t");
-        List<Estoque> listaProd = query.getResultList();
-        return listaProd;
+        Query query = getEntityManager().createQuery("select idproduto,nomeprod,categprod,precoprod,sum(qtd)"
+                + " from Estoque group by idproduto,nomeprod,categprod,precoprod");
+        return query.getResultList();
     }
 
 }
